@@ -1,0 +1,12 @@
+# tmux
+alias tm="tmux new-session -s init || tmux a -t init"
+alias tls="tmux ls"
+alias tma="tmux a -t"
+
+# git
+alias gdm="git diff master"
+alias gcam="git commit -am"
+alias gcan="git add --all && git commit --amend --no-edit"
+alias grb="git rebase"
+alias grbm="git rebase master"
+alias grh="git reset --hard"

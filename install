@@ -1,0 +1,18 @@
+#!/bin/bash
+
+files="vimrc tmux tmux.conf zsh_aliases"
+
+for file in $files; do
+  if [ -L ~/.$file ]; then
+    echo "symlink .$file exists, deleting"
+    rm ~/.$file
+  fi
+  if [ -f ~/.$file ]; then
+    echo ".$file exists, backing up to .$file.old"
+    mv -f ~/.$file ~/.$file.old
+  fi
+  ln -s ~/dotfiles/$file ~/.$file
+  echo "Installed .$file"
+done
+
+echo "Done!"
